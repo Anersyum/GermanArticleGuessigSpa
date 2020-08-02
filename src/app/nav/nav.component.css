@@ -1,0 +1,36 @@
+.nav-bar {
+
+    width: 70px;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding-left: 10px;
+    padding-top: 10px;
+    position: absolute;
+}
+
+.nav-bar a {
+
+    margin-bottom: 10px;
+    border: 1px solid #313131;
+    background-color: #414141;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    -webkit-box-shadow: 9px 4px 30px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px 4px 30px -1px rgba(0,0,0,0.75);
+    box-shadow: 9px 4px 30px -1px rgba(0,0,0,0.75);
+}
+
+.nav-bar a:hover {
+
+    background-color: gray;
+}
+
+.active {
+
+    background-color: gray !important;
+}

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Ines-German": {
+    "InesGerman": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Ines-German",
+            "outputPath": "dist/InesGerman",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,7 +24,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              {
+                "input": "./node_modules/bootstrap/dist/css/bootstrap.css"
+              }
             ],
             "scripts": []
           },
@@ -63,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Ines-German:build"
+            "browserTarget": "InesGerman:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Ines-German:build:production"
+              "browserTarget": "InesGerman:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Ines-German:build"
+            "browserTarget": "InesGerman:build"
           }
         },
         "test": {
@@ -111,15 +114,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Ines-German:serve"
+            "devServerTarget": "InesGerman:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Ines-German:serve:production"
+              "devServerTarget": "InesGerman:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "Ines-German"
+    }
+  },
+  "defaultProject": "InesGerman"
 }

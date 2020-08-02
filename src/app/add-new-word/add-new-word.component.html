@@ -1,0 +1,18 @@
+<div class="add-word-container">
+    <form class="word-container" (ngSubmit)="onSubmit()" id="createWord" #form="ngForm">
+      <div class="articles">
+        <select required class="form-control" id="exampleFormControlSelect1" name="article" [(ngModel)]="wordModel.article">
+          <option value="der">der</option>
+          <option value="die">die</option>
+          <option value="das">das</option>
+        </select>
+      </div>
+      <div class="word">
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Word" required
+          [(ngModel)]="wordModel.word" name="word">
+      </div>
+    </form>
+    <div class="save-container">
+      <button type="submit" class="btn btn-light" form="createWord" [disabled]="!form.valid">Save</button>
+    </div>
+</div>

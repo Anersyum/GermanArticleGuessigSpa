@@ -1,0 +1,28 @@
+.add-word-container {
+
+    width: 100%;
+    height: calc(100% - 3.5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.word-container {
+
+    margin-bottom: 10px;
+}
+
+.word-container {
+
+    display: flex;
+    flex-direction: row;
+    width: 350px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.word-container select {
+    
+    margin-right: 10px;
+}

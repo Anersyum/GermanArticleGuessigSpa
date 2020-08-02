@@ -1,0 +1,40 @@
+.articles-container {
+
+    width: 100%;
+    height: calc(100% - 3.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.guess-article-container {
+
+    width: 70%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #414141;
+    -webkit-box-shadow: 9px 4px 30px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px 4px 30px -1px rgba(0,0,0,0.75);
+    box-shadow: 9px 4px 30px -1px rgba(0,0,0,0.75);
+}
+
+.article-word {
+
+    color: white;
+    font-size: 3em;
+    text-align: center;
+}
+
+.article-choices {
+
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
