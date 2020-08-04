@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-guess-clan',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuessClanComponent implements OnInit {
 
-  constructor() { }
+  startGame = false;
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+  }
+
+  startGuessingGame() {
+
+    this.startGame = true;
+  }
+
+  guess(article: string) {
+
+    alert(article);
   }
 
 }

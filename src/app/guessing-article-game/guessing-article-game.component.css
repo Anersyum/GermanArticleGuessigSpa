@@ -1,0 +1,14 @@
+.article-word {
+
+    color: white;
+    font-size: 3em;
+    text-align: center;
+}
+
+.article-choices {
+
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}

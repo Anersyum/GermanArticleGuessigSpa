@@ -9,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { GuessingArticleGameComponent } from './guessing-article-game/guessing-article-game.component';
 
 @NgModule({
    declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
       GuessClanComponent,
       AddNewWordComponent,
       NavComponent,
-      HomeComponent
+      HomeComponent,
+      GuessingArticleGameComponent
    ],
    imports: [
       BrowserModule,

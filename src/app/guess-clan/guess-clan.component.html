@@ -1,13 +1,9 @@
 <div class="articles-container">
   <div class="guess-article-container">
-    <div class="article-word">
-      <span>___</span>
-      <span> Auto</span>
+    <div class="start-game-container" *ngIf="!startGame">
+      <span>Start game?</span>
+      <button class="btn btn-light" (click)="startGuessingGame()">Start game</button>
     </div>
-    <div class="article-choices">
-      <button type="button" class="btn btn-light">der</button>
-      <button type="button" class="btn btn-dark">die</button>
-      <button type="button" class="btn btn-secondary">das</button>
-    </div>
+    <app-guessing-article-game *ngIf="startGame"></app-guessing-article-game>
   </div>
 </div>
