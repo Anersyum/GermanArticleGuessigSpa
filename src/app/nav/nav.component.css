@@ -34,3 +34,19 @@
 
     background-color: gray !important;
 }
+
+/* modal words */
+.words {
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.words .delete-word {
+
+    color: red;
+    font-size: 1.3em;
+    font-weight: bold;
+    cursor: pointer;
+}

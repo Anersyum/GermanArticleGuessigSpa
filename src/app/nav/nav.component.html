@@ -12,7 +12,6 @@
     <i class="fa fa-list" aria-hidden="true"></i>
   </a>
 </nav>
-
 <!-- Modal -->
 <div *ngIf="showList" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -24,13 +23,13 @@
         </button>
       </div>
       <div class="modal-body">
-        <div *ngFor="let word of wordList">
-          {{ word.article + ' ' + word.word }}
+        <div class="words" *ngFor="let word of wordList">
+          <span class="word">{{ word.article + ' ' + word.word }}</span>
+          <a class="delete-word" (click)="deleteWord(word.id, $event)">&times;</a>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

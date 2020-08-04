@@ -35,7 +35,7 @@ export class GuessingArticleGameComponent implements OnInit {
       this.wordsFailed++;
     }
 
-    if (this.wordFromListPosition >= 9) {
+    if (this.wordFromListPosition >= (this.wordsList.length - 1)) {
 
       alertify.confirm('Your current score is ' + this.wordsGuessed + ' articles guessed correctly '
       + 'and ' + this.wordsFailed + ' articles guessed incorrectly. Do you want to continue?',

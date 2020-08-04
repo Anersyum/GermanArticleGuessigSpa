@@ -3,7 +3,7 @@
   <span *ngIf="listLoaded"> {{ wordsList[wordFromListPosition].word }}</span>
 </div>
 <div class="article-choices">
-  <button type="button" class="btn btn-light" (click)="guess('der')">der</button>
-  <button type="button" class="btn btn-dark" (click)="guess('die')">die</button>
-  <button type="button" class="btn btn-secondary" (click)="guess('das')">das</button>
+  <button type="button" class="btn btn-primary" (click)="guess('der')">der</button>
+  <button type="button" class="btn btn-danger" (click)="guess('die')">die</button>
+  <button type="button" class="btn btn-success" (click)="guess('das')">das</button>
 </div>

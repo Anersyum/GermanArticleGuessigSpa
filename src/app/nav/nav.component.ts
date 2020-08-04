@@ -30,4 +30,17 @@ export class NavComponent implements OnInit {
       console.error(error);
     })
   }
+
+  deleteWord(id: number, event) {
+
+    this.http.post('http://localhost:5000/api/words/delete', { id }).subscribe((response: any) => {
+
+      event.target.parentElement.remove();
+      alertify.success('Deleted successfully!');
+    }, error => {
+
+      alertify.error('There was an errror while deleting the word.');
+      console.error(error);
+    })
+  }
 }
