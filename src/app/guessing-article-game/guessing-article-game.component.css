@@ -28,3 +28,44 @@
 
     animation: fadeOutAndIn 2s forwards;
 }
+
+.guess-message-container {
+
+    position: absolute;
+    top: 30%;
+    left: calc(50% - 1em);
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.correct {
+
+    color: #59b76f;
+}
+
+.incorrect {
+
+    color: #d25b5b;
+}
+
+.fade-message-out {
+
+    animation: fadeMessageOut 1s;
+}
+
+@keyframes fadeMessageOut {
+
+    100% { opacity: 0; }
+}
+
+.fade-message-in {
+
+    animation: fadeMessageIn 1s;
+}
+
+@keyframes fadeMessageIn {
+
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

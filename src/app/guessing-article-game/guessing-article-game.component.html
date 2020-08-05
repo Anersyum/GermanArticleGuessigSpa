@@ -1,3 +1,7 @@
+<div class="guess-message-container" [ngClass]="{'fade-message-out': showNextWord, 'fade-message-in': showAnswer && !showNextWord}" *ngIf="showAnswer">
+  <span class="correct" *ngIf="isCorrect">Correct!</span>
+  <span class="incorrect" *ngIf="!isCorrect">Wrong!</span>
+</div>
 <div class="article-word" [ngClass]="{'next-word-fade-in': showNextWord}">
   <span [ngClass]="{'answer-fade-in': showAnswer}">{{ article }}</span>
   <span *ngIf="listLoaded"> {{ wordsList[wordFromListPosition].word }}</span>

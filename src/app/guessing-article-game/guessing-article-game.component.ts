@@ -18,6 +18,7 @@ export class GuessingArticleGameComponent implements OnInit {
   article = '___';
   showAnswer = false;
   showNextWord = false;
+  isCorrect = false;
 
   // todo: add tooltips to nav buttons
   constructor(private http: HttpClient, private router: Router) { }
@@ -31,11 +32,11 @@ export class GuessingArticleGameComponent implements OnInit {
 
     if (this.wordsList[this.wordFromListPosition].article === article) {
 
-      alertify.success('You guessed right!');
+      this.isCorrect = true;
       this.wordsGuessed++;
     } else {
 
-      alertify.error('You guessed wrong!');
+      this.isCorrect = false;
       this.wordsFailed++;
     }
 
