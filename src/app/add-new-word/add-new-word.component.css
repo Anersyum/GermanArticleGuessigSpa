@@ -6,11 +6,12 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    pointer-events: none;
 }
 
-.word-container {
+.word-component-header {
 
-    margin-bottom: 10px;
+    color: white;
 }
 
 .word-container {
@@ -20,6 +21,8 @@
     width: 350px;
     align-items: center;
     justify-content: space-evenly;
+    margin-bottom: 10px;
+    pointer-events: auto;
 }
 
 .word-container select {
@@ -27,9 +30,14 @@
     margin-right: 10px;
 }
 
+.save-container {
+
+    pointer-events: auto;
+}
+
 .fade-in {
 
-    animation: fadeIn 1s forwards;
+    animation: fadeIn 1s;
 }
 
 @keyframes fadeIn {
