@@ -9,6 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class GuessClanComponent implements OnInit {
 
   startGame = false;
+  fadeOut = false;
+
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -16,7 +18,11 @@ export class GuessClanComponent implements OnInit {
 
   startGuessingGame() {
 
-    this.startGame = true;
+    this.fadeOut = true;
+
+    setTimeout(() => {
+      this.startGame = true;
+    }, 1000);
   }
 
   guess(article: string) {
