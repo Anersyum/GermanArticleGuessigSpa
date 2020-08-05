@@ -16,6 +16,7 @@ export class GuessingArticleGameComponent implements OnInit {
   wordFromListPosition = 0;
   listLoaded = false;
   article = '___';
+  showAnswer = false;
   // todo: add tooltips to nav buttons
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -36,24 +37,22 @@ export class GuessingArticleGameComponent implements OnInit {
       this.wordsFailed++;
     }
 
-    this.article = this.wordsList[this.wordFromListPosition].article;
-
-    if (this.wordFromListPosition >= (this.wordsList.length - 1)) {
-
-      alertify.confirm('Your current score is ' + this.wordsGuessed + ' articles guessed correctly '
-      + 'and ' + this.wordsFailed + ' articles guessed incorrectly. Do you want to continue?',
-      () => {
-        this.wordFromListPosition = 0;
-        this.getWordsList();
-      }, () => {
-        this.router.navigateByUrl('/');
-      });
-    }
+    this.showAnswer = true;
 
     setTimeout(() => {
-      this.article = '___';
-      this.wordFromListPosition++;
-    }, 2.5 * 1000);
+      this.article = this.wordsList[this.wordFromListPosition].article;
+    }, 750);
+
+    setTimeout(() => {
+
+      if (this.isEndOfList()) {
+
+        this.notifyScore();
+      } else {
+
+        this.changeWord();
+      }
+    }, 3 * 1000);
   }
 
   getWordsList() {
@@ -69,5 +68,41 @@ export class GuessingArticleGameComponent implements OnInit {
       alertify.error('There was an error while getting the word list');
       console.error(error);
     });
+  }
+
+  private isEndOfList() {
+
+    if (this.wordFromListPosition >= (this.wordsList.length - 1)) {
+
+      return true;
+    }
+
+    return false;
+  }
+
+  private notifyScore() {
+
+    alertify.confirm('Your current score is ' + this.wordsGuessed + ' articles guessed correctly '
+    + 'and ' + this.wordsFailed + ' articles guessed incorrectly. Do you want to continue?',
+    () => {
+      this.continueGame();
+    }, () => {
+      this.router.navigateByUrl('/');
+    });
+  }
+
+  private changeWord() {
+
+    this.article = '___';
+    this.showAnswer = false;
+    this.wordFromListPosition++;
+  }
+
+  private continueGame() {
+
+    this.showAnswer = false;
+    this.article = '___';
+    this.wordFromListPosition = 0;
+    this.getWordsList();
   }
 }

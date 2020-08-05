@@ -12,3 +12,14 @@
     justify-content: space-evenly;
     margin-top: 10px;
 }
+
+.answer-fade-in {
+
+    animation: fadeOutAndIn 1.5s forwards;
+}
+
+@keyframes fadeOutAndIn {
+
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
