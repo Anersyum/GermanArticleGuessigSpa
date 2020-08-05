@@ -11,7 +11,8 @@ export class NavComponent implements OnInit {
 
   wordList: any;
   showList = false;
-
+  wordCount = 0;
+  
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -24,6 +25,7 @@ export class NavComponent implements OnInit {
     this.http.get('http://localhost:5000/api/words/get').subscribe((response: any) => {
 
       this.wordList = response.wordsList;
+	  this.wordCount = this.wordList.length;
     }, error => {
 
       alertify.error('There was an error');
