@@ -17,6 +17,8 @@ export class GuessingArticleGameComponent implements OnInit {
   listLoaded = false;
   article = '___';
   showAnswer = false;
+  showNextWord = false;
+
   // todo: add tooltips to nav buttons
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -93,13 +95,23 @@ export class GuessingArticleGameComponent implements OnInit {
 
   private changeWord() {
 
-    this.article = '___';
-    this.showAnswer = false;
-    this.wordFromListPosition++;
+    this.showNextWord = true;
+
+    setTimeout(() => {
+      this.article = '___';
+      this.showAnswer = false;
+
+      setTimeout(() => {
+        this.showNextWord = false;
+      }, 1000);
+
+      this.wordFromListPosition++;
+    }, 1000);
   }
 
   private continueGame() {
 
+    this.showNextWord = false;
     this.showAnswer = false;
     this.article = '___';
     this.wordFromListPosition = 0;

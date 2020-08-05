@@ -1,4 +1,4 @@
-<div class="article-word">
+<div class="article-word" [ngClass]="{'next-word-fade-in': showNextWord}">
   <span [ngClass]="{'answer-fade-in': showAnswer}">{{ article }}</span>
   <span *ngIf="listLoaded"> {{ wordsList[wordFromListPosition].word }}</span>
 </div>

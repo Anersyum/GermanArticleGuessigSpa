@@ -23,3 +23,8 @@
     50% { opacity: 0; }
     100% { opacity: 1; }
 }
+
+.next-word-fade-in {
+
+    animation: fadeOutAndIn 2s forwards;
+}
