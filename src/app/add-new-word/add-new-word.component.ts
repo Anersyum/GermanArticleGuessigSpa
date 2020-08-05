@@ -22,7 +22,6 @@ export class AddNewWordComponent implements OnInit {
       (response: any) => {
 
         alertify.success('The word ' + this.wordModel.word + ' has been added!');
-        console.log(response);
       }, error => {
 
         alertify.error('There was an error. Maybe you added a word that already exists?');

@@ -26,16 +26,18 @@ export class NavComponent implements OnInit {
     this.http.get('http://localhost:5000/api/words/get').subscribe((response: any) => {
 
       this.wordList = response.wordsList;
-      if (this.wordList.lenth > 0) {
+
+      if (this.wordList.length > 0) {
 
         this.lastEnteredWord = this.wordList[this.wordList.length - 1].article + ' ' + this.wordList[this.wordList.length - 1].word;
       }
+
       this.wordCount = this.wordList.length;
     }, error => {
 
       alertify.error('There was an error');
       console.error(error);
-    })
+    });
   }
 
   deleteWord(id: number, event) {
@@ -48,6 +50,6 @@ export class NavComponent implements OnInit {
 
       alertify.error('There was an errror while deleting the word.');
       console.error(error);
-    })
+    });
   }
 }

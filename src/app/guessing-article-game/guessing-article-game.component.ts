@@ -15,7 +15,8 @@ export class GuessingArticleGameComponent implements OnInit {
   wordsFailed = 0;
   wordFromListPosition = 0;
   listLoaded = false;
-
+  article = '___';
+  // todo: add tooltips to nav buttons
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
@@ -35,6 +36,8 @@ export class GuessingArticleGameComponent implements OnInit {
       this.wordsFailed++;
     }
 
+    this.article = this.wordsList[this.wordFromListPosition].article;
+
     if (this.wordFromListPosition >= (this.wordsList.length - 1)) {
 
       alertify.confirm('Your current score is ' + this.wordsGuessed + ' articles guessed correctly '
@@ -47,7 +50,10 @@ export class GuessingArticleGameComponent implements OnInit {
       });
     }
 
-    this.wordFromListPosition++;
+    setTimeout(() => {
+      this.article = '___';
+      this.wordFromListPosition++;
+    }, 2.5 * 1000);
   }
 
   getWordsList() {
