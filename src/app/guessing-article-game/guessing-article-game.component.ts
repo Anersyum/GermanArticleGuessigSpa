@@ -19,12 +19,15 @@ export class GuessingArticleGameComponent implements OnInit {
   showAnswer = false;
   showNextWord = false;
   isCorrect = false;
+  modalButton: any;
+  gameExited = false;
 
-  // todo: add tooltips to nav buttons
+
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
 
+    this.modalButton = document.querySelector('#openModal');
     this.getWordsList();
   }
 
@@ -73,6 +76,11 @@ export class GuessingArticleGameComponent implements OnInit {
     });
   }
 
+  closeGame() {
+
+    this.router.navigateByUrl('/');
+  }
+
   private isEndOfList() {
 
     if (this.wordFromListPosition >= (this.wordsList.length - 1)) {
@@ -90,7 +98,9 @@ export class GuessingArticleGameComponent implements OnInit {
     () => {
       this.continueGame();
     }, () => {
-      this.router.navigateByUrl('/');
+      setTimeout(() => {
+        this.gameExited = true;
+      }, 1000);
     });
   }
 

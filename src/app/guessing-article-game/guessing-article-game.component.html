@@ -11,3 +11,22 @@
   <button type="button" class="btn btn-danger" (click)="guess('die')">die</button>
   <button type="button" class="btn btn-success" (click)="guess('das')">das</button>
 </div>
+
+<div class="custom-modal-backdrop" *ngIf="gameExited">
+  <div class="custom-modal-content">
+    <div class="custom-moda-title">
+      <h6>Wrongly guessed words</h6>
+    </div>
+    <div class="wrong-words-container">
+      <div class="wrongly-guessed-words">
+        der Auto: guessed das
+      </div>
+      <div class="wrongly-guessed-words">
+        der Auto: guessed das
+      </div>
+    </div>
+    <div class="close-button">
+      <button class="btn btn-dark" (click)="closeGame()">Close</button>
+    </div>
+  </div>
+</div>

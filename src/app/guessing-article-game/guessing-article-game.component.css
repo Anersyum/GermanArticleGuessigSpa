@@ -69,3 +69,57 @@
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+
+.custom-modal-backdrop {
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.custom-modal-content {
+
+    width: 50%;
+    height: 90%;
+    margin-top: 50px;
+    border: 1px solid rebeccapurple;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+}
+
+.custom-moda-title {
+
+    width: 95%;
+    margin-left: 2.5%;
+    text-align: center;
+    border-bottom: 1px solid silver;
+    margin-top: 10px;
+}
+
+.wrongly-guessed-words {
+
+    width: 100%;
+    padding: 15px 15px 0 15px;
+}
+
+.close-button {
+
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.wrong-words-container {
+
+    width: 95%;
+    margin-left: 2.5%;
+    height: 83%;
+    border-bottom: 1px solid silver;
+    overflow: auto;
+}
