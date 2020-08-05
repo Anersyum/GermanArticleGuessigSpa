@@ -12,17 +12,16 @@
   <button type="button" class="btn btn-success" (click)="guess('das')">das</button>
 </div>
 
-<div class="custom-modal-backdrop" *ngIf="gameExited">
+<div class="custom-modal-backdrop fade-message-in" *ngIf="gameExited">
   <div class="custom-modal-content">
     <div class="custom-moda-title">
       <h6>Wrongly guessed words</h6>
     </div>
     <div class="wrong-words-container">
-      <div class="wrongly-guessed-words">
-        der Auto: guessed das
-      </div>
-      <div class="wrongly-guessed-words">
-        der Auto: guessed das
+      <div class="wrongly-guessed-words" *ngFor="let wordGuess of incorrectWords">
+        Correct word <span class="correct">
+          {{ wordGuess.correctArticle + ' ' + wordGuess.word }}
+        </span>: your guess <span class="incorrect">{{ wordGuess.guessedArticle }}</span>
       </div>
     </div>
     <div class="close-button">

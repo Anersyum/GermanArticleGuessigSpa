@@ -21,7 +21,7 @@ export class GuessingArticleGameComponent implements OnInit {
   isCorrect = false;
   modalButton: any;
   gameExited = false;
-
+  incorrectWords = [];
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -41,6 +41,11 @@ export class GuessingArticleGameComponent implements OnInit {
 
       this.isCorrect = false;
       this.wordsFailed++;
+      this.incorrectWords.push({
+        guessedArticle: article,
+        correctArticle: this.wordsList[this.wordFromListPosition].article,
+        word: this.wordsList[this.wordFromListPosition].word
+      });
     }
 
     this.showAnswer = true;
