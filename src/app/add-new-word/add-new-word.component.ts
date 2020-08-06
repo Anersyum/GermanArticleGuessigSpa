@@ -10,6 +10,7 @@ import * as alertify from 'alertifyjs';
 export class AddNewWordComponent implements OnInit {
 
   wordModel: any = {};
+  savingWord = false;
 
   constructor(private http: HttpClient) { }
 
@@ -18,13 +19,17 @@ export class AddNewWordComponent implements OnInit {
 
   onSubmit() {
 
+    this.savingWord = true;
+
     this.http.post('http://localhost:5000/api/words/create', this.wordModel).subscribe(
       (response: any) => {
 
         alertify.success('The word ' + this.wordModel.word + ' has been added!');
+        this.savingWord = false;
       }, error => {
 
         alertify.error('There was an error. Maybe you added a word that already exists?');
+        this.savingWord = false;
         console.error(error);
       });
   }

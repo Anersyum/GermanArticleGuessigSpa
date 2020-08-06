@@ -12,8 +12,11 @@
         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Word" required
           [(ngModel)]="wordModel.word" name="word">
       </div>
+      <div class="loading-bar-container" *ngIf="savingWord">
+        <div class="loading-bar"></div>
+      </div>
     </form>
     <div class="save-container">
-      <button type="submit" class="btn btn-light" form="createWord" [disabled]="!form.valid">Save</button>
+      <button type="submit" class="btn btn-light" form="createWord" [disabled]="!form.valid || savingWord">Save</button>
     </div>
 </div>

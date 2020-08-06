@@ -23,6 +23,7 @@
     justify-content: space-evenly;
     margin-bottom: 10px;
     pointer-events: auto;
+    position: relative;
 }
 
 .word-container select {
@@ -44,4 +45,28 @@
 
     0% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+.loading-bar-container {
+
+    /* border: 1px solid red; */
+    width: 87%;
+    position: absolute;
+    top: 40px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.loading-bar {
+
+    background-color: #d25b5b;
+    width: 70%;
+    height: 100%;
+    animation: loadBar 1s infinite;
+    margin-left: -70%;
+}
+
+@keyframes loadBar {
+
+    100% { margin-left: 100%; }
 }
