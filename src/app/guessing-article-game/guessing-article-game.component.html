@@ -7,9 +7,9 @@
   <span *ngIf="listLoaded"> {{ wordsList[wordFromListPosition].word }}</span>
 </div>
 <div class="article-choices">
-  <button type="button" class="btn btn-primary" (click)="guess('der')">der</button>
-  <button type="button" class="btn btn-danger" (click)="guess('die')">die</button>
-  <button type="button" class="btn btn-success" (click)="guess('das')">das</button>
+  <button type="button" class="btn btn-primary" (click)="guess('der')" [disabled]="showAnswer">der</button>
+  <button type="button" class="btn btn-danger" (click)="guess('die')" [disabled]="showAnswer">die</button>
+  <button type="button" class="btn btn-success" (click)="guess('das')" [disabled]="showAnswer">das</button>
 </div>
 
 <div class="custom-modal-backdrop fade-message-in" *ngIf="gameExited">
