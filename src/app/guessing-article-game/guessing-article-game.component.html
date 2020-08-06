@@ -2,7 +2,7 @@
   <span class="correct" *ngIf="isCorrect">Correct!</span>
   <span class="incorrect" *ngIf="!isCorrect">Wrong!</span>
 </div>
-<div class="article-word" [ngClass]="{'next-word-fade-in': showNextWord}">
+<div class="article-word" [ngClass]="{'next-word-fade-in': showNextWord}" *ngIf="listLoaded">
   <span [ngClass]="{'answer-fade-in': showAnswer}">{{ article }}</span>
   <span *ngIf="listLoaded"> {{ wordsList[wordFromListPosition].word }}</span>
 </div>

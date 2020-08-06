@@ -10,6 +10,7 @@ export class GuessClanComponent implements OnInit {
 
   startGame = false;
   fadeOut = false;
+  load = false;
 
   constructor(private http: HttpClient) { }
 
@@ -28,6 +29,11 @@ export class GuessClanComponent implements OnInit {
   guess(article: string) {
 
     alert(article);
+  }
+
+  startLoad(event) {
+
+    this.load = event;
   }
 
 }

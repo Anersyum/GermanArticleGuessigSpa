@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as alertify from 'alertifyjs';
 import { Router } from '@angular/router';
@@ -22,6 +22,8 @@ export class GuessingArticleGameComponent implements OnInit {
   modalButton: any;
   gameExited = false;
   incorrectWords = [];
+  // tslint:disable-next-line: no-output-native
+  @Output() load = new EventEmitter<boolean>(true);
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -69,14 +71,17 @@ export class GuessingArticleGameComponent implements OnInit {
   getWordsList() {
 
     this.listLoaded = false;
+    this.load.emit(true);
 
     this.http.get('http://localhost:5000/api/words/get/guessing').subscribe((response: any) => {
 
       this.wordsList = response.wordList;
+      this.load.emit(false);
       this.listLoaded = true;
     }, error => {
 
       alertify.error('There was an error while getting the word list');
+      this.load.emit(false);
       console.error(error);
     });
   }

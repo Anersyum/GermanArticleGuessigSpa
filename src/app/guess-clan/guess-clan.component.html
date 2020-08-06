@@ -1,9 +1,10 @@
 <div class="articles-container slide-in">
   <div class="guess-article-container">
+    <div class="loading-bar-container" *ngIf="load"></div>
     <div class="start-game-container" [ngClass]="{'fade-out': fadeOut}" *ngIf="!startGame">
       <span>Start game?</span>
       <button class="btn btn-light" (click)="startGuessingGame()">Start game</button>
     </div>
-    <app-guessing-article-game class="hide" [ngClass]="{'fade-in': startGame}" *ngIf="startGame"></app-guessing-article-game>
+    <app-guessing-article-game (load)="startLoad($event)" class="hide" [ngClass]="{'fade-in': startGame}" *ngIf="startGame"></app-guessing-article-game>
   </div>
 </div>
