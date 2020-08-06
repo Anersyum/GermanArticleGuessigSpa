@@ -5,6 +5,6 @@
       <span>Start game?</span>
       <button class="btn btn-light" (click)="startGuessingGame()">Start game</button>
     </div>
-    <app-guessing-article-game (load)="startLoad($event)" class="hide" [ngClass]="{'fade-in': startGame}" *ngIf="startGame"></app-guessing-article-game>
+    <app-guessing-article-game (load)="startLoad($event)" class="hide guess-game-container" [ngClass]="{'fade-in': startGame}" *ngIf="startGame"></app-guessing-article-game>
   </div>
 </div>

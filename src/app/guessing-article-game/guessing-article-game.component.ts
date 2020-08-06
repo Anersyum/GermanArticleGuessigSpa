@@ -43,6 +43,7 @@ export class GuessingArticleGameComponent implements OnInit {
 
       this.isCorrect = false;
       this.wordsFailed++;
+
       this.incorrectWords.push({
         guessedArticle: article,
         correctArticle: this.wordsList[this.wordFromListPosition].article,
@@ -110,7 +111,7 @@ export class GuessingArticleGameComponent implements OnInit {
     }, () => {
       setTimeout(() => {
         this.gameExited = true;
-      }, 1000);
+      }, 500);
     });
   }
 
