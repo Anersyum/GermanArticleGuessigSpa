@@ -13,6 +13,7 @@ export class NavComponent implements OnInit {
   showList = false;
   wordCount = 0;
   lastEnteredWord = '';
+  isLoading = false;
 
   constructor(private http: HttpClient) { }
 
@@ -22,6 +23,7 @@ export class NavComponent implements OnInit {
   showWordsList() {
 
     this.showList = true;
+    this.isLoading = true;
 
     this.http.get('http://localhost:5000/api/words/get').subscribe((response: any) => {
 
@@ -33,23 +35,29 @@ export class NavComponent implements OnInit {
       }
 
       this.wordCount = this.wordList.length;
+      this.isLoading = false;
     }, error => {
 
       alertify.error('There was an error');
       console.error(error);
+      this.isLoading = false;
     });
   }
 
   deleteWord(id: number, event) {
 
+    this.isLoading = true;
+
     this.http.post('http://localhost:5000/api/words/delete', { id }).subscribe((response: any) => {
 
       event.target.parentElement.remove();
       alertify.success('Deleted successfully!');
+      this.isLoading = false;
     }, error => {
 
       alertify.error('There was an errror while deleting the word.');
       console.error(error);
+      this.isLoading = false;
     });
   }
 }

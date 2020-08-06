@@ -45,8 +45,35 @@
 
 .words .delete-word {
 
-    color: red;
+    color: #d25b5b;
     font-size: 1.3em;
     font-weight: bold;
     cursor: pointer;
+}
+/* ========================= */
+/* loading screen */
+.list-loading-container {
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-circle {
+
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #d25b5b;
+    animation: animateCircle 1s both infinite linear;
+}
+
+@keyframes animateCircle {
+
+    33% { margin-left: 50px; }
+    66% { margin-left: -50px; }
 }
