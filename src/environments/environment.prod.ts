@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: 'https://germanarticles.azurewebsites.net/api/words/get/'
 };

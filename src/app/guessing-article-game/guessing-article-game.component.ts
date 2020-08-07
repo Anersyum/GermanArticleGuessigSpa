@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as alertify from 'alertifyjs';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-guessing-article-game',
@@ -74,7 +75,7 @@ export class GuessingArticleGameComponent implements OnInit {
     this.listLoaded = false;
     this.load.emit(true);
 
-    this.http.get('http://localhost:5000/api/words/get/guessing').subscribe((response: any) => {
+    this.http.get(environment.apiUrl + 'get/guessing').subscribe((response: any) => {
 
       this.wordsList = response.wordList;
       this.load.emit(false);

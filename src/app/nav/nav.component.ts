@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as alertify from 'alertifyjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-nav',
@@ -25,7 +26,7 @@ export class NavComponent implements OnInit {
     this.showList = true;
     this.isLoading = true;
 
-    this.http.get('http://localhost:5000/api/words/get').subscribe((response: any) => {
+    this.http.get(environment.apiUrl + 'get').subscribe((response: any) => {
 
       this.wordList = response.wordsList;
 
@@ -48,7 +49,7 @@ export class NavComponent implements OnInit {
 
     this.isLoading = true;
 
-    this.http.post('http://localhost:5000/api/words/delete', { id }).subscribe((response: any) => {
+    this.http.post(environment.apiUrl + 'delete', { id }).subscribe((response: any) => {
 
       event.target.parentElement.remove();
       alertify.success('Deleted successfully!');
