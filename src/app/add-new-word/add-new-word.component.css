@@ -1,7 +1,7 @@
 .add-word-container {
 
     width: 100%;
-    height: calc(100% - 3.5rem);
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +49,6 @@
 
 .loading-bar-container {
 
-    /* border: 1px solid red; */
     width: 87%;
     position: absolute;
     top: 40px;
