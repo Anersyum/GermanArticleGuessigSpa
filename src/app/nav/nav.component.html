@@ -14,12 +14,12 @@
 </nav>
 
 <nav class="nav-bar-mobile">
-  <button class="btn btn-dark fix-size" (click)="openMenu()">N</button>
-  <div class="menu" *ngIf="menuOpened">
+  <button class="btn btn-dark fix-size" (click)="openMenu()"><i class="fa fa-bars" aria-hidden="true"></i></button>
+  <div class="menu" *ngIf="menuOpened" (click)="closeMenu()">
     <a class="home-btn" [routerLink]="['/']" data-toggle="tooltip" data-placement="right" title="Home">
       Home
     </a>
-    <a class="create-btn" [routerLink]="['/create-word']" routerLinkActive="active" data-toggle="tooltip" data-placement="right" title="Create a new word">
+    <a class="create-btn"  [routerLink]="['/create-word']" routerLinkActive="active" data-toggle="tooltip" data-placement="right" title="Create a new word">
       Add new word
     </a>
     <a class="guess-btn" [routerLink]="['/guess-articles']" routerLinkActive="active" data-toggle="tooltip" data-placement="right" title="Guessing game">

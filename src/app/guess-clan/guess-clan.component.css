@@ -103,10 +103,14 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    pointer-events: auto;
 }
 
 @media only screen and (max-width: 850px) {
+
+    .articles-container {
+
+        height: 100%;
+    }
 
     .guess-article-container {
 
@@ -128,5 +132,6 @@
 
         animation: fadeIn 1s forwards;
         pointer-events: auto;
+        z-index: 0;
     }
 }

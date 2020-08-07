@@ -67,4 +67,9 @@ export class NavComponent implements OnInit {
 
     this.menuOpened = !this.menuOpened;
   }
+
+  closeMenu() {
+
+    this.menuOpened = false;
+  }
 }

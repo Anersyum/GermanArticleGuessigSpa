@@ -69,3 +69,11 @@
 
     100% { margin-left: 100%; }
 }
+
+@media only screen and (max-width: 850px) {
+
+    .word-container {
+
+        width: 90%;
+    }
+}
