@@ -15,6 +15,7 @@ export class NavComponent implements OnInit {
   wordCount = 0;
   lastEnteredWord = '';
   isLoading = false;
+  menuOpened = false;
 
   constructor(private http: HttpClient) { }
 
@@ -60,5 +61,10 @@ export class NavComponent implements OnInit {
       console.error(error);
       this.isLoading = false;
     });
+  }
+
+  openMenu() {
+
+    this.menuOpened = !this.menuOpened;
   }
 }

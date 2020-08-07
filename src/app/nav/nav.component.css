@@ -12,6 +12,11 @@
     left: 0;
 }
 
+.nav-bar-mobile {
+
+    display: none;
+}
+
 .nav-bar a {
 
     margin-bottom: 10px;
@@ -78,4 +83,88 @@
 
     33% { margin-left: 50px; }
     66% { margin-left: -50px; }
+}
+
+@media only screen and (max-width: 850px) {
+
+    .nav-bar {
+
+        display: none;
+    }
+
+    .nav-bar-mobile {
+
+        width: 150px;
+        height: 35%;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        padding-left: 10px;
+        padding-top: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .menu {
+
+        background-color: white;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 0px 5px;
+        border: 1px solid black;
+        border-radius: 5px;
+        animation: openMenu 1s;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50px;
+    }
+
+    @keyframes openMenu {
+
+        0% { height: 0%; }
+        100% { height: 100%;}
+    }
+
+    .fix-size {
+
+        width: 50px;
+    }
+
+    .home-btn, .create-btn, .guess-btn, .list-of-added-words-btn {
+
+        border-bottom: 1px solid silver;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0px 10px 0px;
+        opacity: 0;
+        animation: showButtons 1s 0.5s forwards;
+        color: #343a40;
+        cursor: pointer;
+    }
+
+    .list-of-added-words-btn {
+
+        border-bottom: none;
+    }
+
+    .list-of-added-words-btn:hover {
+
+        text-decoration: underline;
+        color: #343a40;
+    }
+
+    @keyframes showButtons {
+
+        100% { opacity: 1; }
+    }
+
+    .active {
+
+        /* border: none; */
+        background-color: transparent !important;
+    }
 }
