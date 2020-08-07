@@ -8,6 +8,8 @@
     padding-left: 10px;
     padding-top: 10px;
     position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .nav-bar a {
