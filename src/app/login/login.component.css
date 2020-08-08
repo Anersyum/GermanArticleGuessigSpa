@@ -7,6 +7,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: fade-in 0.7s;
+}
+
+@keyframes fade-in {
+
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .login-content {
@@ -16,6 +23,14 @@
     background-color: white;
     border-radius: 10px;
     position: relative;
+    opacity: 0;
+    animation: slide-from-top 1s 0.5s forwards;
+}
+
+@keyframes slide-from-top {
+
+    0% { margin-top: -100px; opacity: 0; }
+    100% { margin-top: 0; opacity: 1; }
 }
 
 .login-form {
