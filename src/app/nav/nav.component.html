@@ -21,7 +21,7 @@
 
 <nav class="nav-bar-mobile">
   <button class="btn btn-dark fix-size" (click)="openMenu()"><i class="fa fa-bars" aria-hidden="true"></i></button>
-  <div class="menu" *ngIf="menuOpened" (click)="closeMenu()">
+  <div class="menu" [ngClass]="{'logged-in-menu': isLoggedIn(), 'logged-out-menu': !isLoggedIn()}" *ngIf="menuOpened" (click)="closeMenu()">
     <a class="home-btn" [routerLink]="['/']" data-toggle="tooltip" data-placement="right" title="Home">
       Home
     </a>

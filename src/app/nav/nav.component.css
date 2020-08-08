@@ -87,6 +87,11 @@
 
 @media only screen and (max-width: 850px) {
 
+    :root {
+
+        --height: 165px;
+    }
+
     .nav-bar {
 
         display: none;
@@ -116,18 +121,33 @@
         padding: 0px 5px;
         border: 1px solid black;
         border-radius: 5px;
-        animation: openMenu 1s;
         position: absolute;
         width: 100%;
-        height: 165px;
+        height: initial;
         top: 50px;
         z-index: 1;
     }
 
-    @keyframes openMenu {
+    .logged-out-menu {
+
+        animation: openMenuLoggedOut 1s;
+    }
+
+    @keyframes openMenuLoggedOut {
 
         0% { height: 0%; }
-        100% { height: 165px;}
+        100% { height: 160px; }
+    }
+
+    .logged-in-menu {
+
+        animation: openMenuLoggedIn 1s;
+    }
+
+    @keyframes openMenuLoggedIn {
+
+        0% { height: 0%; }
+        100% { height: 200px; }
     }
 
     .fix-size {
