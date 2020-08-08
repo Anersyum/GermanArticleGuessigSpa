@@ -35,5 +35,10 @@ export class AuthService {
 
     return !this.jwtHelperService.isTokenExpired(token);
   }
+
+  logout() {
+
+    localStorage.removeItem('token');
+  }
 }
 

@@ -3,6 +3,7 @@ import * as alertify from 'alertifyjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { AuthService } from '../_services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -18,7 +19,7 @@ export class NavComponent implements OnInit {
   isLoading = false;
   menuOpened = false;
 
-  constructor(private http: HttpClient, private authService: AuthService) { }
+  constructor(private http: HttpClient, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -77,5 +78,11 @@ export class NavComponent implements OnInit {
   isLoggedIn(): boolean {
 
     return this.authService.isLoggedIn();
+  }
+
+  logout() {
+
+    this.authService.logout();
+    this.router.navigateByUrl('/');
   }
 }
