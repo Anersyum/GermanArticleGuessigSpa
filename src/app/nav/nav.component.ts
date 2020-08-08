@@ -27,7 +27,7 @@ export class NavComponent implements OnInit {
     this.showList = true;
     this.isLoading = true;
 
-    this.http.get(environment.apiUrl + 'get').subscribe((response: any) => {
+    this.http.get(environment.apiUrl + 'words/get').subscribe((response: any) => {
 
       this.wordList = response.wordsList;
 
@@ -50,7 +50,7 @@ export class NavComponent implements OnInit {
 
     this.isLoading = true;
 
-    this.http.post(environment.apiUrl + 'delete', { id }).subscribe((response: any) => {
+    this.http.post(environment.apiUrl + 'words/delete', { id }).subscribe((response: any) => {
 
       event.target.parentElement.remove();
       alertify.success('Deleted successfully!');

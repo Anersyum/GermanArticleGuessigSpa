@@ -75,7 +75,7 @@ export class GuessingArticleGameComponent implements OnInit {
     this.listLoaded = false;
     this.load.emit(true);
 
-    this.http.get(environment.apiUrl + 'get/guessing').subscribe((response: any) => {
+    this.http.get(environment.apiUrl + 'words/get/guessing').subscribe((response: any) => {
 
       this.wordsList = response.wordList;
       this.load.emit(false);

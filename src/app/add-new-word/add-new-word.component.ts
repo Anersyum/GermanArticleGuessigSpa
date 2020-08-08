@@ -22,7 +22,7 @@ export class AddNewWordComponent implements OnInit {
 
     this.savingWord = true;
 
-    this.http.post(environment.apiUrl + 'create', this.wordModel).subscribe(
+    this.http.post(environment.apiUrl + 'words/create', this.wordModel).subscribe(
       (response: any) => {
 
         alertify.success('The word ' + this.wordModel.word + ' has been added!');
