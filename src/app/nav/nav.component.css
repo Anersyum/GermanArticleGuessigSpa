@@ -135,7 +135,7 @@
         width: 50px;
     }
 
-    .home-btn, .create-btn, .guess-btn, .list-of-added-words-btn {
+    .home-btn, .create-btn, .guess-btn, .list-of-added-words-btn, .login-btn {
 
         border-bottom: 1px solid silver;
         width: 100%;
@@ -147,7 +147,7 @@
         cursor: pointer;
     }
 
-    .list-of-added-words-btn {
+    .login-btn {
 
         border-bottom: none;
     }

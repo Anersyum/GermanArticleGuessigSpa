@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as alertify from 'alertifyjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -17,7 +18,7 @@ export class NavComponent implements OnInit {
   isLoading = false;
   menuOpened = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -71,5 +72,10 @@ export class NavComponent implements OnInit {
   closeMenu() {
 
     this.menuOpened = false;
+  }
+
+  isLoggedIn(): boolean {
+
+    return this.authService.isLoggedIn();
   }
 }

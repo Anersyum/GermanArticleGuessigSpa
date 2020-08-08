@@ -2,7 +2,7 @@
   <a class="home-btn" [routerLink]="['/']" data-toggle="tooltip" data-placement="right" title="Home">
     <i class="fa fa-home" aria-hidden="true"></i>
   </a>
-  <a class="create-btn" [routerLink]="['/create-word']" routerLinkActive="active" data-toggle="tooltip" data-placement="right" title="Create a new word">
+  <a *ngIf="isLoggedIn()" class="create-btn" [routerLink]="['/create-word']" routerLinkActive="active" data-toggle="tooltip" data-placement="right" title="Create a new word">
     <i class="fa fa-plus" aria-hidden="true"></i>
   </a>
   <a class="guess-btn" [routerLink]="['/guess-articles']" routerLinkActive="active" data-toggle="tooltip" data-placement="right" title="Guessing game">
@@ -22,7 +22,7 @@
     <a class="home-btn" [routerLink]="['/']" data-toggle="tooltip" data-placement="right" title="Home">
       Home
     </a>
-    <a class="create-btn"  [routerLink]="['/create-word']" routerLinkActive="active" data-toggle="tooltip" data-placement="right" title="Create a new word">
+    <a *ngIf="isLoggedIn()" class="create-btn"  [routerLink]="['/create-word']" routerLinkActive="active" data-toggle="tooltip" data-placement="right" title="Create a new word">
       Add new word
     </a>
     <a class="guess-btn" [routerLink]="['/guess-articles']" routerLinkActive="active" data-toggle="tooltip" data-placement="right" title="Guessing game">
@@ -52,7 +52,7 @@
       <div class="modal-body">
         <div class="words" *ngFor="let word of wordList">
           <span class="word">{{ word.article + ' ' + word.word }}</span>
-          <a class="delete-word" (click)="deleteWord(word.id, $event)">&times;</a>
+          <a *ngIf="isLoggedIn()" class="delete-word" (click)="deleteWord(word.id, $event)">&times;</a>
         </div>
       </div>
       <div class="modal-footer">
