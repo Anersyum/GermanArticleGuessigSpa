@@ -52,7 +52,11 @@ export class NavComponent implements OnInit {
 
     this.isLoading = true;
 
-    this.http.post(environment.apiUrl + 'words/delete', { id }).subscribe((response: any) => {
+    this.http.post(environment.apiUrl + 'words/delete', { id }, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('token')
+      }
+    }).subscribe((response: any) => {
 
       event.target.parentElement.remove();
       alertify.success('Deleted successfully!');

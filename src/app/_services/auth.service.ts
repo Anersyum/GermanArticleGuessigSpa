@@ -15,7 +15,7 @@ export class AuthService {
 
   login(loginModel: any) {
 
-    return this.http.post(environment.apiUrl + '/auth/login', loginModel).pipe(
+    return this.http.post(environment.apiUrl + 'auth/login', loginModel).pipe(
       map((response: any) => {
 
         const admin = response;
