@@ -1,12 +1,12 @@
 <div class="login-content-container">
   <div class="login-content">
+    <a class="close-btn" (click)="closeLoginForm()">&times;</a>
     <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="login-form">
       <div class="form-group">
         <h5 class="login-label">Enter password</h5>
         <input type="password" class="form-control" name="password" id="password" placeholder="Password" [(ngModel)]="loginModel.password">
         <button type="submit" class="btn btn-dark">Login</button>
       </div>
-      <h6>or continue as a <a (click)="continueAsGuest()">guest</a></h6>
     </form>
   </div>
 </div>

@@ -9,7 +9,6 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AuthService {
 
-  isGuest = false;
   private jwtHelperService = new JwtHelperService();
 
   constructor(private http: HttpClient) { }
@@ -35,11 +34,6 @@ export class AuthService {
     const token = localStorage.getItem('token');
 
     return !this.jwtHelperService.isTokenExpired(token);
-  }
-
-  logInAsGuest() {
-
-    this.isGuest = true;
   }
 }
 

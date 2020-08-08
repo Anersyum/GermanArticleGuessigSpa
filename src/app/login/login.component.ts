@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  continueAsGuest() {
+  closeLoginForm() {
 
-    this.authService.logInAsGuest();
+    this.router.navigateByUrl('/');
   }
 }
